@@ -1,0 +1,33 @@
+﻿<form id="transactionDetailContainer">
+    <div class="row">
+        <div class="col-md-8">
+            <label for="category" class="required">Category</label>
+            <input id="category" name="category" data-bind="value: data.categoryId" required validationMessage="Select category" />
+        </div>
+        <div class="col-md-4">
+            <label for="purchaseDate" class="required">Purchase Date</label>
+            <input id="purchaseDate" name="purchaseDate" data-bind="value: data.purchaseDate" required validationMessage="Enter purchase date" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <label for="payeeName" class="required">Payee</label>
+            <input id="payeeName" name="payeeName" class="payee-name" data-bind="value: data.payeeName" required validationMessage="Enter payee name" />
+        </div>
+        <div class="col-md-4">
+            <label for="purchaseAmount" class="required">Amount</label>
+            <input id="purchaseAmount" name="purchaseAmount" data-bind="value: data.purchaseAmount" required validationMessage="Enter purchase amount" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+            <label for="memo" class="required">Memo</label>
+            <input id="memo" name="memo" class="memo" data-bind="value: data.memo" />
+        </div>
+    </div>
+    <div class="row">
+        <button type="button" id="saveButton" data-bind="click: saveClick">Save</button>
+        <button type="button" id="cancelButton" data-bind="click: cancelClick">Cancel</button>
+    </div>
+</form>
+

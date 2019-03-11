@@ -1,0 +1,10 @@
+﻿<div class="row">
+    <div class="col-md-2">#:payeeName#</div>
+    <div class="col-md-1">
+        #:new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 }).format(purchaseAmount)#
+    </div>
+    <div class="col-md-1">#:purchaseDate.toLocaleDateString()#</div>
+    <div class="col-md-2">#:memo#</div>
+    <div class="col-md-1"><a href="\#" class="transaction-item-edit">Edit</a></div>
+    <div class="col-md-1"><a href="\#" class="transaction-item-delete">Delete</a></div>
+</div>

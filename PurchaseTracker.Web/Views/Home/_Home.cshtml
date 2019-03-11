@@ -1,0 +1,85 @@
+﻿<div id="app"></div>
+
+@*<script id="index" type="text/x-kendo-template">
+    Hello
+    <span data-bind="text: foo"></span>
+    <button data-bind="click: buttonClick">Click me to call view model code</button>
+    <a href="#" data-bind="click: goToView2">Go to view 2</a>
+</script>*@
+
+<script>
+
+    templatesLoader.loadExtTemplates([
+        { tag: "transactionListTemplate", path: "./scripts/templates/transaction-list.tmpl.htm" },
+        { tag: "transactionListItemTemplate", path: "./scripts/templates/transaction-list-item.tmpl.htm" },
+        { tag: "transactionDetailTemplate", path: "./scripts/templates/transaction-detail.tmpl.htm" },
+    ]);
+
+    $(document).bind("TEMPLATES_LOADED", function (e, path) {
+        console.log('Templates loaded');
+        debugger;
+
+        kendo.template($("#transactionListTemplate").html(), { useWithBlock: false });
+        kendo.template($("#transactionListItemTemplate").html(), { useWithBlock: false });
+        kendo.template($("#transactionDetailTemplate").html(), { useWithBlock: false });
+
+        //Use the template (assuming "data" is collection loaded elsewhere)
+        //_itemTemplate(data);
+
+        debugger;
+        // models
+        //var viewModel = kendo.observable({
+        //    foo: "World!",
+
+        //    init: function () {
+        //        console.log("view init", this.foo);
+        //    },
+
+        //    show: function () {
+        //        console.log("view show", this.foo);
+        //    },
+
+        //    buttonClick: function () {
+        //        alert("button clicked");
+        //    },
+
+        //    goToView2: function (e) {
+        //        router.navigate("/detail");
+        //        e.preventDefault();
+        //    }
+        //});
+
+
+        // views, layouts
+        //var layout = new kendo.Layout("<header>Header</header><section id='content'></section><footer>Footer</footer>");
+
+        //var index = new kendo.View("indexTemplate", { model: viewModel, init: viewModel.init.bind(viewModel), show: viewModel.show.bind(viewModel) });
+
+        //var detail = new kendo.View("<span>Detail - press your browser back button to navigate back.</span>");
+        //var detail = new kendo.View("detailTemplate");
+
+
+        // routing
+        //var router = new kendo.Router();
+
+        router.bind("init", function () {
+            layout.render($("#app"));
+        });
+
+        //router.route("/", function () {
+        //    layout.showIn("#content", index);
+        //});
+
+        //router.route("/detail", function () {
+        //    layout.showIn("#content", detail);
+        //});
+
+        $(function () {
+            router.start();
+        });
+    });
+
+    //$(function () {
+    //});
+
+</script>
